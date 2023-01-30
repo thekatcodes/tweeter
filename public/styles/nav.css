@@ -1,9 +1,11 @@
 nav {
+position: fixed;
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;  
 height: 120px;
+width: 100%;
 padding-left: 1.5em;
 padding-right: 1.5em;
 background-color: #4056A1;
@@ -18,4 +20,8 @@ color: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.fa-angles-down {
+    color: red;
 }
