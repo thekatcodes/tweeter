@@ -14,13 +14,13 @@ form {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+    font-family: 'Bungee', cursive;
 
 }
 
 .tweet-btn {
     padding-left: 10px;
     padding-right: 10px;
-    font-family: 'Bungee', cursive;
     background-color: #4056A1;
     border: none;
     color: #FFFFFF;
