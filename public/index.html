@@ -59,14 +59,37 @@
         <section class="new-tweet">
             <h2>Compose Tweet</h2>
             <form action="/tweets/" method="POST">
-              <label for="tweet-text">What are you humming about?</label>
-              <textarea name="text" id="tweet-text" placeholder="Tweet text here"></textarea>
-              <div class="tweet-btn-counter">
-                <button class="tweet-btn" type="submit">Tweet</button>
-                <output name="counter" class="counter" for="tweet-text">140</output>
-              </div>
+                <label for="tweet-text">What are you humming about?</label>
+                <textarea name="text" id="tweet-text" placeholder="Tweet text here"></textarea>
+                <div class="tweet-btn-counter">
+                    <button class="tweet-btn" type="submit">Tweet</button>
+                    <output name="counter" class="counter" for="tweet-text">140</output>
+                </div>
             </form>
-          </section>
+        </section>
+        <section class="tweet-container">
+            <article>
+                <header class="tweet-header">
+                    <span class="tweet-left">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjqq9iZHi2eqGHrsaojDZrJePW56GThvYh4Q&usqp=CAU"
+                            alt="DP" class="user-pic">
+                        <p>Name Name</p>
+                    </span>
+                    <span class="tweet-right">
+                        <h4>@Username</h4>
+                    </span>
+                </header>
+                <p class="article-text"> <b>Tweet tweet good night</b> </p>
+                <footer class="tweet-footer">
+                    <span>10 days ago</span>
+                    <div class="tweet-footer-icons">
+                        <i class="fa-solid fa-flag"></i>
+                        <i class="fa-solid fa-retweet"></i>
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                </footer>
+            </article>
+        </section>
     </main>
 </body>
 
