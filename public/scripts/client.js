@@ -72,3 +72,18 @@ $(function () {
 
 	renderTweets(tweetData);
 });
+
+$(function () {
+    $("form").submit(function(event) {
+        event.preventDefault();
+        const $textarea = $(this).children("textarea");
+        const $data = $textarea.serialize();
+        // console.log($data);
+        // console.log("Form submitted, performing ajax call...");
+
+
+        $.post( "/tweets", $data);
+    });
+
+
+});
