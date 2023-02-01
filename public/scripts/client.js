@@ -1,43 +1,13 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 $(function () {
-	const tweetData = [
-		{
-			user: {
-				name: "Newton",
-				avatars: "https://i.imgur.com/73hZDYK.png",
-				handle: "@SirIsaac",
-			},
-			content: {
-				text: "If I have seen further it is by standing on the shoulders of giants",
-			},
-			created_at: 1675110591962,
-		},
-		{
-			user: {
-				name: "Descartes",
-				avatars: "https://i.imgur.com/nlhLi3I.png",
-				handle: "@rd",
-			},
-			content: {
-				text: "Je pense , donc je suis",
-			},
-			created_at: 1675196991962,
-		},
-	];
-// Take in an array of tweet data objects and call the createTweetElement function for each tweet object in the array, then appends the return value from the createTweetElement function to the .tweets-container section.
+	// Take in an array of tweet data objects and call the createTweetElement function for each tweet object in the array, then appends the return value from the createTweetElement function to the .tweets-container section.
 	const renderTweets = function (tweets) {
 		for (let tweet of tweets) {
 			const $tweet = createTweetElement(tweet);
 			$(".tweet-container").append($tweet);
 		}
-    };
-    
-// Take one tweet data object and format each value in the object in HTML format
+	};
+
+	// Take one tweet data object and format each value in the object in HTML format
 	const createTweetElement = function (data) {
 		const content = data.content;
 		const user = data.user;
@@ -70,20 +40,16 @@ $(function () {
 		return $tweet;
 	};
 
-	renderTweets(tweetData);
-});
+	// Retrieve submitted form content and renders it to the web page
+	const loadTweets = function () {
+		$.getJSON("/tweets/").then((tweetData) => renderTweets(tweetData));
+	};
+	$("form").submit(function (event) {
+		event.preventDefault();
+		const $textarea = $(this).children("textarea");
+		const $data = $textarea.serialize();
+		$textarea.val("");
 
-$(function () {
-    $("form").submit(function(event) {
-        event.preventDefault();
-        const $textarea = $(this).children("textarea");
-        const $data = $textarea.serialize();
-        // console.log($data);
-        // console.log("Form submitted, performing ajax call...");
-
-
-        $.post( "/tweets", $data);
-    });
-
-
+		$.post("/tweets/", $data).then(loadTweets);
+	});
 });
