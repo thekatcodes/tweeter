@@ -1,8 +1,8 @@
 $(function () {
 	// Take in an array of tweet data objects and call the createTweetElement function for each tweet object in the array, then appends the return value from the createTweetElement function to the .tweets-container section.
-    const renderTweets = function(tweets) {
-        let ascendTweets = tweets.reverse();
-        for (let tweet of ascendTweets) {
+	const renderTweets = function (tweets) {
+		let ascendTweets = tweets.reverse();
+		for (let tweet of ascendTweets) {
 			const $tweet = createTweetElement(tweet);
 			$(".tweet-container").append($tweet);
 		}
@@ -28,7 +28,8 @@ $(function () {
     </span>
 </header>`);
 
-		const paragraph = $(`<p class="article-text"> <b>${content.text}</b> </p>`);
+        const paragraph = $('<p class="article-text"> <b></b> </p>');
+        paragraph.text(content.text)
 
 		const footer = $(`<footer class="tweet-footer">
         <time class="timeago" datetime="${created_at}">${created_at}</time>
@@ -45,16 +46,15 @@ $(function () {
 
 	// Retrieve submitted form content and renders it to the web page
 	const loadTweets = function () {
-        $.getJSON("/tweets/").then((tweetData) => {
-            $('.tweet-container').empty();
-            renderTweets(tweetData);
-        })
+		$.getJSON("/tweets/").then((tweetData) => {
+			$(".tweet-container").empty();
+			renderTweets(tweetData);
+		});
 	};
-    $("form").submit(function(event) {
+	$("form").submit(function (event) {
 		event.preventDefault();
 		const $textarea = $(this).children("textarea");
 		const $data = $textarea.serialize();
-		$textarea.val("");
 
 		// The user should be given an error that their tweet content is too long or that it is not present (ideally separate messages for each scenario)
 		// if (!$textarea.val().trim()) {
