@@ -1,7 +1,3 @@
-.new-tweet {
-    margin-top: 100px;
-}
-
 form {
     display: flex;
     flex-direction: column;
@@ -47,6 +43,11 @@ article {
     margin-top: 40px;
     padding-left: 1.5em;
     padding-right: 1.5em;
+}
+article:hover {
+    box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);}
+.new-tweet {
+    margin-top: 100px;
 }
 
 article header.tweet-header,
