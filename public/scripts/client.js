@@ -11,9 +11,11 @@ $(function () {
 	const createTweetElement = function (data) {
 		const content = data.content;
 		const user = data.user;
-		const created_at = data.created_at;
+		//convert timestamp into how long it has been since tweet was tweeted
+		const created_at = timeago.format(data.created_at);
 
-		const $tweet = $(`<article></article>`);
+        const $tweet = $(`<article></article>`);
+        
 		const header = $(`<header class="tweet-header">
     <span class="tweet-left">
         <img src=${user.avatars}
@@ -28,7 +30,7 @@ $(function () {
 		const paragraph = $(`<p class="article-text"> <b>${content.text}</b> </p>`);
 
 		const footer = $(`<footer class="tweet-footer">
-    <span>${created_at}</span>
+        <time class="timeago" datetime="${created_at}">${created_at}</time>
     <div class="tweet-footer-icons">
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
