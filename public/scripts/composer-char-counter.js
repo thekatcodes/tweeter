@@ -26,6 +26,6 @@ $(document).ready(function () {
 				.next(".tweet-btn-counter")
 				.children(".counter")
 				.removeClass("error");
-		}
+        }
 	});
 });

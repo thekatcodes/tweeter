@@ -1,7 +1,8 @@
 $(function () {
 	// Take in an array of tweet data objects and call the createTweetElement function for each tweet object in the array, then appends the return value from the createTweetElement function to the .tweets-container section.
-	const renderTweets = function (tweets) {
-		for (let tweet of tweets) {
+    const renderTweets = function(tweets) {
+        let ascendTweets = tweets.reverse();
+        for (let tweet of ascendTweets) {
 			const $tweet = createTweetElement(tweet);
 			$(".tweet-container").append($tweet);
 		}
@@ -14,8 +15,8 @@ $(function () {
 		//convert timestamp into how long it has been since tweet was tweeted
 		const created_at = timeago.format(data.created_at);
 
-        const $tweet = $(`<article></article>`);
-        
+		const $tweet = $(`<article></article>`);
+
 		const header = $(`<header class="tweet-header">
     <span class="tweet-left">
         <img src=${user.avatars}
