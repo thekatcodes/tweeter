@@ -30,6 +30,11 @@ form {
     color: red;
 }
 
+.error-message {
+    color: red;
+font-size: large;
+}
+
 /* Tweeted article styling */
 article {
     border: 5px solid #545149;

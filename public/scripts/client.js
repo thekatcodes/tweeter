@@ -28,8 +28,8 @@ $(function () {
     </span>
 </header>`);
 
-        const paragraph = $('<p class="article-text"> <b></b> </p>');
-        paragraph.text(content.text)
+		const paragraph = $('<p class="article-text"> <b></b> </p>');
+		paragraph.text(content.text);
 
 		const footer = $(`<footer class="tweet-footer">
         <time class="timeago" datetime="${created_at}">${created_at}</time>
@@ -57,14 +57,37 @@ $(function () {
 		const $data = $textarea.serialize();
 
 		// The user should be given an error that their tweet content is too long or that it is not present (ideally separate messages for each scenario)
-		// if (!$textarea.val().trim()) {
-		// 	return alert("Your text field is empty");
-		// }
-		// if ($textarea.val().length > 140) {
-		// 	return alert("Maximum character count exceeded");
-		// }
+		if (!$textarea.val().trim()) {
+			$(".tweet-error").empty();
+			const errorMessage = "Your text field is empty";
+			const errorAlert = $(
+				`<p class="error-message"><i class="fa-regular fa-circle-xmark"></i> ${errorMessage}</p>`
+			);
 
-		// $textarea.val("");
+			// return $(errorAlert).appendTo($(".tweet-error")).slideDown("slow");
+			// $(".tweet-error").append(errorAlert);
+			// return $(".tweet-error").slideDown("slow");
+
+			return $(".tweet-error").slideDown("2000", function () {
+				$(".tweet-error").append(errorAlert);
+			});
+		}
+		if ($(".counter").val() < 0) {
+			$(".tweet-error").empty();
+			const errorMessage = "Maximum character count exceeded";
+			const errorAlert = $(
+				`<p class="error-message"><i class="fa-regular fa-circle-xmark"></i> ${errorMessage}</p>`
+			);
+
+			// return $(errorAlert).appendTo($(".tweet-error")).slideDown("slow");
+			// $(".tweet-error").append(errorAlert);
+			// return $(".tweet-error").slideDown("slow");
+			return $(".tweet-error").slideDown("2000", function () {
+				$(".tweet-error").append(errorAlert);
+			});
+		}
+
+		$textarea.val("");
 		$.post("/tweets/", $data).then(loadTweets);
 	});
 });
