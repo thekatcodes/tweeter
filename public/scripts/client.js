@@ -45,14 +45,26 @@ $(function () {
 
 	// Retrieve submitted form content and renders it to the web page
 	const loadTweets = function () {
-		$.getJSON("/tweets/").then((tweetData) => renderTweets(tweetData));
+        $.getJSON("/tweets/").then((tweetData) => {
+            $('.tweet-container').empty();
+            renderTweets(tweetData);
+        })
 	};
-	$("form").submit(function (event) {
+    $("form").submit(function(event) {
 		event.preventDefault();
 		const $textarea = $(this).children("textarea");
 		const $data = $textarea.serialize();
 		$textarea.val("");
 
+		// The user should be given an error that their tweet content is too long or that it is not present (ideally separate messages for each scenario)
+		// if (!$textarea.val().trim()) {
+		// 	return alert("Your text field is empty");
+		// }
+		// if ($textarea.val().length > 140) {
+		// 	return alert("Maximum character count exceeded");
+		// }
+
+		// $textarea.val("");
 		$.post("/tweets/", $data).then(loadTweets);
 	});
 });
