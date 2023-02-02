@@ -32,9 +32,11 @@
 
     <!-- External Icons -->
     <script src="https://kit.fontawesome.com/5a03b8ed22.js" crossorigin="anonymous"></script>
-    
+
     <!-- Timeago -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+        integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -43,28 +45,25 @@
         <span class="tweeter-logo">tweeter</span>
         <div class="nav-right">
             <span class="nav-write-tweet"><b>Write</b> a new tweet</span>
-            <i class="fa-solid fa-angles-down"></i>
+            <a href="index.html#tweet-text"><i class="fa-solid fa-angles-down"></i></a>
         </div>
     </nav>
 
     <!-- Page-specific (main) content here -->
-    <header>
-        <div class="header-avatar">
-            <img src="/images/profile-hex.png">
-        </div>
-        <br>
+    <header class="header-avatar">
         <div>
-            <h2>Your Name</h2>
+            <img src="/images/profile-hex.png" alt="Profile picture">
+        </div>
+        <div>
+            <p class="header-name"><b>Katie</b> Liu</p>
         </div>
     </header>
 
-    <main class="container" >
+    <main class="container">
         <section class="new-tweet">
-            <h2>Compose Tweet</h2>
             <form action="/tweets/" method="POST">
-                <label for="tweet-text">What are you humming about?</label>
                 <div class="tweet-error"></div>
-                <textarea name="text" id="tweet-text" placeholder="Tweet text here"></textarea>
+                <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
                 <div class="tweet-btn-counter">
                     <button class="tweet-btn" type="submit">Tweet</button>
                     <output name="counter" class="counter" for="tweet-text">140</output>

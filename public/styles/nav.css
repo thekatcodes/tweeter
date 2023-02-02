@@ -1,19 +1,20 @@
 nav {
-position: fixed;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;  
-height: 120px;
-width: 100%;
-padding-left: 1.5em;
-padding-right: 1.5em;
-background-color: #4056A1;
-color: #FFFFFF;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    width: 100%;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    background-color: #4056A1;
+    color: #FFFFFF;
 }
 
 .tweeter-logo {
     font-family: 'Bungee', cursive;
+    font-size: 30px;
 }
 
 .nav-right {
@@ -24,4 +25,31 @@ color: #FFFFFF;
 
 .fa-angles-down {
     color: red;
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 10px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+/* Another tablet breakpoint is maximum width of 1024px */
+@media only screen and (max-width: 1024px) {
+    nav {
+        background-color: transparent;
+    }
 }

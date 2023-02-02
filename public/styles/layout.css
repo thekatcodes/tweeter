@@ -4,10 +4,14 @@
  * Do not modify these two selectors, please
  */
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
 
 /*
@@ -15,10 +19,10 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+    color: #545149;
+    background-color: #f4f1ec;
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 
@@ -26,8 +30,23 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
+main {
     width: 90%;
     margin: auto;
-    padding-top: 50px; /* TEMPORARY - to fix later (text overlaps header username*/
- }
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media only screen and (min-width: 1024px) {
+
+    body {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    main {
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+        overflow-y: auto;
+    }
+}

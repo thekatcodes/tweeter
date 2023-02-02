@@ -1,9 +1,36 @@
-header {
-    height: 400px;
-    text-align: center;
-    background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+.header-avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    background-image: url("https://www.transparenttextures.com/patterns/blizzard.png");
+    background-color: #D89C2B;
 }
 
-.header-avatar {
-    padding-top: 120px;
+.header-name {
+    color: white;
+    font-size: 35px;
+}
+
+/* Desktop layout */
+@media only screen and (min-width: 1024px) {
+
+    .header-avatar {
+        padding-top: 60px;
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+        margin-top: 150px;
+    }
+}
+
+/* Tablet layout */
+@media only screen and (max-width: 1024px) {
+    .header-avatar {
+        width: 100%;
+        padding-top: 100px;
+        margin-bottom: none;
+        margin-left: none;
+    }
 }

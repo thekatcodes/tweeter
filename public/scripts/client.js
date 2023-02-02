@@ -59,7 +59,7 @@ $(function () {
 		// Display error messages
 		if (!$textarea.val().trim()) {
 			$(".tweet-error").empty();
-			const errorMessage = "Your text field is empty";
+			const errorMessage = "Your tweet is empty";
 			const errorAlert = $(
 				`<p class="error-message"><i class="fa-regular fa-circle-xmark"></i> ${errorMessage}</p>`
 			);

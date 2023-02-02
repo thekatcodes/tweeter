@@ -1,3 +1,7 @@
+.new-tweet {
+    margin-top: 100px;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -24,6 +28,8 @@ form {
     background-color: #4056A1;
     border: none;
     color: #FFFFFF;
+    cursor: pointer;
+
 }
 
 .error {
@@ -32,7 +38,7 @@ form {
 
 .error-message {
     color: red;
-font-size: large;
+    font-size: large;
 }
 
 /* Tweeted article styling */
@@ -96,4 +102,18 @@ article footer.tweet-footer {
 .fa-heart:hover {
     color: #C49A3D;
     cursor: pointer;
+}
+
+/* Desktop layout */
+@media only screen and (min-width: 1024px) {
+    form {
+        padding-top: 100px;
+    }
+}
+
+/* Tablet layout */
+@media only screen and (max-width: 1024px) {
+    main .container {
+        background-color: transparent;
+    }
 }
