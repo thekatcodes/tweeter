@@ -56,7 +56,7 @@ $(function () {
 		const $textarea = $(this).children("textarea");
 		const $data = $textarea.serialize();
 
-		// The user should be given an error that their tweet content is too long or that it is not present (ideally separate messages for each scenario)
+		// Display error messages
 		if (!$textarea.val().trim()) {
 			$(".tweet-error").empty();
 			const errorMessage = "Your text field is empty";
@@ -64,13 +64,11 @@ $(function () {
 				`<p class="error-message"><i class="fa-regular fa-circle-xmark"></i> ${errorMessage}</p>`
 			);
 
-			// return $(errorAlert).appendTo($(".tweet-error")).slideDown("slow");
-			// $(".tweet-error").append(errorAlert);
-			// return $(".tweet-error").slideDown("slow");
-
-			return $(".tweet-error").slideDown("2000", function () {
-				$(".tweet-error").append(errorAlert);
-			});
+			return $(".tweet-error")
+				.append(errorAlert)
+				.hide()
+				.appendTo(".tweet-error")
+				.slideDown(300);
 		}
 		if ($(".counter").val() < 0) {
 			$(".tweet-error").empty();
@@ -79,12 +77,11 @@ $(function () {
 				`<p class="error-message"><i class="fa-regular fa-circle-xmark"></i> ${errorMessage}</p>`
 			);
 
-			// return $(errorAlert).appendTo($(".tweet-error")).slideDown("slow");
-			// $(".tweet-error").append(errorAlert);
-			// return $(".tweet-error").slideDown("slow");
-			return $(".tweet-error").slideDown("2000", function () {
-				$(".tweet-error").append(errorAlert);
-			});
+			return $(".tweet-error")
+				.append(errorAlert)
+				.hide()
+				.appendTo(".tweet-error")
+				.slideDown(300);
 		}
 
 		$textarea.val("");
