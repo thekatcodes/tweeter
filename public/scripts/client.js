@@ -1,8 +1,7 @@
 $(function () {
 	// Take in an array of tweet data objects and call the createTweetElement function for each tweet object in the array, then appends the return value from the createTweetElement function to the .tweets-container section.
 	const renderTweets = function (tweets) {
-		let ascendTweets = tweets.reverse();
-		for (let tweet of ascendTweets) {
+		for (let tweet of tweets) {
 			const $tweet = createTweetElement(tweet);
 			$(".tweet-container").append($tweet);
 		}
@@ -51,7 +50,7 @@ $(function () {
 			renderTweets(tweetData);
 		});
 	};
-	$("form").submit(function (event) {
+	$("form").on("submit", function (event) {
 		event.preventDefault();
 		const $textarea = $(this).children("textarea");
 		const $data = $textarea.serialize();
@@ -83,8 +82,15 @@ $(function () {
 				.appendTo(".tweet-error")
 				.slideDown(300);
 		}
-
+		// On successful submission, reset form input and counter
 		$textarea.val("");
+		const $count = $(this).next(".tweet-btn-counter").children(".counter");
+		$count.val(140);
+
+		//POST request to /tweets/ which fires loadTweets function
 		$.post("/tweets/", $data).then(loadTweets);
-	});
+    });
+
+    // Existing tweets automatically loads on the page
+	loadTweets();
 });
