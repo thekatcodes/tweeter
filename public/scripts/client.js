@@ -1,7 +1,8 @@
 $(function () {
 	// Take in an array of tweet data objects and call the createTweetElement function for each tweet object in the array, then appends the return value from the createTweetElement function to the .tweets-container section.
 	const renderTweets = function (tweets) {
-		for (let tweet of tweets) {
+        let newestTweets = tweets.reverse();
+        for (let tweet of newestTweets) {
 			const $tweet = createTweetElement(tweet);
 			$(".tweet-container").append($tweet);
 		}
@@ -10,8 +11,8 @@ $(function () {
 	// Take one tweet data object and format each value in the object in HTML format
 	const createTweetElement = function (data) {
 		const content = data.content;
-        const user = data.user;
-        
+		const user = data.user;
+
 		//convert timestamp into how long it has been since tweet was tweeted
 		const created_at = timeago.format(data.created_at);
 
@@ -50,8 +51,8 @@ $(function () {
 			$(".tweet-container").empty();
 			renderTweets(tweetData);
 		});
-    };
-    
+	};
+
 	$("form").on("submit", function (event) {
 		event.preventDefault();
 		const $textarea = $(this).children("textarea");
@@ -72,8 +73,8 @@ $(function () {
 				.hide()
 				.appendTo(".tweet-error")
 				.slideDown(300);
-        }
-        
+		}
+
 		// Display error message if maximum character count is exceeded
 		if ($(".counter").val() < 0) {
 			$(".tweet-error").empty();
