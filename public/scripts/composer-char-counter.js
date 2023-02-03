@@ -1,5 +1,5 @@
 // Function displays the character count which changes when use types/deletes a key
-$(document).ready(function() {
+$(document).ready(function () {
 	$("textarea").on("keyup", function (event) {
 		let count = 140 - $(this).val().replace(/\s/g, "").length;
 		const $counter = $(this).next(".tweet-btn-counter").children(".counter");
