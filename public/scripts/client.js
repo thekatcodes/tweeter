@@ -10,7 +10,8 @@ $(function () {
 	// Take one tweet data object and format each value in the object in HTML format
 	const createTweetElement = function (data) {
 		const content = data.content;
-		const user = data.user;
+        const user = data.user;
+        
 		//convert timestamp into how long it has been since tweet was tweeted
 		const created_at = timeago.format(data.created_at);
 
@@ -46,18 +47,19 @@ $(function () {
 	// Retrieve submitted form content and renders it to the web page
 	const loadTweets = function () {
 		$.getJSON("/tweets/").then((tweetData) => {
-            $(".tweet-container").empty();
+			$(".tweet-container").empty();
 			renderTweets(tweetData);
 		});
-	};
+    };
+    
 	$("form").on("submit", function (event) {
 		event.preventDefault();
 		const $textarea = $(this).children("textarea");
-        const $data = $textarea.serialize();
-        
-        $(".tweet-error").empty();
+		const $data = $textarea.serialize();
 
-		// Display error messages
+		$(".tweet-error").empty();
+
+		// Display error message if text area is empty
 		if (!$textarea.val().trim()) {
 			$(".tweet-error").empty();
 			const errorMessage = "Your tweet is empty";
@@ -70,7 +72,9 @@ $(function () {
 				.hide()
 				.appendTo(".tweet-error")
 				.slideDown(300);
-		}
+        }
+        
+		// Display error message if maximum character count is exceeded
 		if ($(".counter").val() < 0) {
 			$(".tweet-error").empty();
 			const errorMessage = "Maximum character count exceeded";
@@ -84,16 +88,16 @@ $(function () {
 				.appendTo(".tweet-error")
 				.slideDown(300);
 		}
+
 		// On successful submission, reset form input and counter
 		$textarea.val("");
-        const $count = $(this).find(".counter");
-        console.log($count);
+		const $count = $(this).find(".counter");
 		$count.val(140);
 
 		//POST request to /tweets/ which fires loadTweets function
 		$.post("/tweets/", $data).then(loadTweets);
-    });
+	});
 
-    // Existing tweets automatically loads on the page
+	// Existing tweets automatically loads on the page
 	loadTweets();
 });

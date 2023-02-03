@@ -1,3 +1,7 @@
+.new-tweet {
+    margin-top: 100px;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -44,75 +48,6 @@ form {
     font-size: large;
 }
 
-/* Tweeted article styling */
-article {
-    border: 5px solid #545149;
-    border-radius: 30px;
-    margin-top: 40px;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-}
-
-article:hover {
-    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);}
-.new-tweet {
-    margin-top: 100px;
-}
-
-article header.tweet-header,
-.tweet-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-}
-
-.tweet-left {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.tweet-left h4 {
-    color: #545149;
-}
-
-.tweet-right h4 {
-    color: #C9CDE4;
-}
-
-.user-pic {
-    height: 50px;
-    margin-right: 10px;
-}
-
-article .article-text {
-    border: none;
-    border-bottom: 5px solid #545149;
-    padding-bottom: 30px;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-article footer.tweet-footer {
-    height: 20px;
-    margin: 15px;
-    font-size: 15px;
-}
-
-.fa-flag,
-.fa-retweet,
-.fa-heart {
-    margin: 3px;
-}
-
-.fa-flag:hover,
-.fa-retweet:hover,
-.fa-heart:hover {
-    color: #EB8258;
-    cursor: pointer;
-}
 
 /* Desktop layout */
 @media only screen and (min-width: 1024px) {

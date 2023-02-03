@@ -38,13 +38,16 @@
         width: 100%;
         padding-top: 100px;
     }
+
     .header-avatar img {
         width: 200px;
     }
+
     .header-fixed {
         position: sticky;
         top: 0;
     }
+
     #tweets::before {
         content: '';
         display: block;
