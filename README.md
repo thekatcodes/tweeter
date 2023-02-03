@@ -31,7 +31,7 @@ https://user-images.githubusercontent.com/83685887/216511641-1ce7d687-eec6-4ecc-
 https://user-images.githubusercontent.com/83685887/216511651-f286c88c-9eaa-480a-af43-2f3354327724.mov
 
 
-## Future implementations and improvements
+## Future Improvements
 
 - Implement a way for users to tweet without having to go all the way to the top of the tweet stack.
 - Add a smooth transition when new tweets appear.
