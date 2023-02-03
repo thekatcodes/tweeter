@@ -44,6 +44,7 @@ article {
     padding-left: 1.5em;
     padding-right: 1.5em;
 }
+
 article:hover {
     box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);}
 .new-tweet {

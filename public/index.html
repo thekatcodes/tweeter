@@ -40,27 +40,29 @@
 </head>
 
 <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-        <span class="tweeter-logo">tweeter</span>
-        <div class="nav-right">
-            <span class="nav-write-tweet"><b>Write</b> a new tweet</span>
-            <a href="index.html#tweet-text"><i class="fa-solid fa-angles-down"></i></a>
-        </div>
-    </nav>
+    <div class="header-fixed">
+        <!-- Top nav bar (fixed) -->
+        <nav>
+            <span class="tweeter-logo">tweeter</span>
+            <div class="nav-right">
+                <span class="nav-write-tweet"><b>Write</b> a new tweet</span>
+                <a href="index.html#tweets"><i class="fa-solid fa-angles-down"></i></a>
+            </div>
+        </nav>
 
-    <!-- Page-specific (main) content here -->
-    <header class="header-avatar">
-        <div>
-            <img src="/images/profile-hex.png" alt="Profile picture">
-        </div>
-        <div>
-            <p class="header-name"><b>Katie</b> Liu</p>
-        </div>
-    </header>
+        <!-- Page-specific (main) content here -->
+        <header class="header-avatar">
+            <div>
+                <img src="/images/profile-hex.png" alt="Profile picture">
+            </div>
+            <div>
+                <p class="header-name"><b>Katie</b> Liu</p>
+            </div>
+        </header>
+    </div>
 
     <main class="container">
-        <section class="new-tweet">
+        <section class="new-tweet" id="tweets">
             <form action="/tweets/" method="POST">
                 <div class="tweet-error"></div>
                 <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
