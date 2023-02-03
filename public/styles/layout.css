@@ -15,11 +15,10 @@ html {
 }
 
 /*
- * Global layout stuff
  */
 
 body {
-    color: #545149;
+    color: #17183B;
     background-color: #f4f1ec;
     font-size: 24px;
     font-family: 'Source Sans Pro', sans-serif;
@@ -45,8 +44,9 @@ main {
     }
 
     main {
-        margin-left: 1.5em;
-        margin-right: 1.5em;
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+        padding-bottom: 1.5em;
         overflow-y: auto;
     }
 }

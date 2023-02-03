@@ -3,10 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    height: 50%;
+    width: 80%;
     background-image: url("https://www.transparenttextures.com/patterns/blizzard.png");
-    background-color: #D89C2B;
+    background-color: #EB8258;
 }
 
 .header-name {
@@ -21,6 +20,15 @@
         margin-left: 1.5em;
         margin-right: 1.5em;
         margin-top: 150px;
+        border-radius: 50px;
+    }
+
+    #tweets::before {
+        content: '';
+        display: block;
+        height: 510px;
+        margin-top: -510px;
+        visibility: hidden;
     }
 }
 
@@ -30,6 +38,9 @@
         width: 100%;
         padding-top: 100px;
     }
+    .header-avatar img {
+        width: 200px;
+    }
     .header-fixed {
         position: sticky;
         top: 0;
@@ -37,8 +48,8 @@
     #tweets::before {
         content: '';
         display: block;
-        height: 500px;
-        margin-top: -500px;
+        height: 510px;
+        margin-top: -510px;
         visibility: hidden;
     }
 }

@@ -19,34 +19,42 @@ form {
 }
 
 .tweet-btn {
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: #4056A1;
+    background-color: #6C6EA0;
+    border-radius: 10px;
     border: none;
-    color: #FFFFFF;
+    color: #F4F1EC;
     cursor: pointer;
+}
 
+.tweet-btn:hover {
+    box-shadow: 0 2px 5px #b0b0d3;
+    transition: all 150ms ease-in-out;
 }
 
 .error {
-    color: red;
+    color: #DB162F;
 }
 
 .error-message {
-    color: red;
+    color: #DB162F;
     font-size: large;
 }
 
 /* Tweeted article styling */
 article {
     border: 5px solid #545149;
+    border-radius: 30px;
     margin-top: 40px;
     padding-left: 1.5em;
     padding-right: 1.5em;
 }
 
 article:hover {
-    box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);}
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);}
 .new-tweet {
     margin-top: 100px;
 }
@@ -102,7 +110,7 @@ article footer.tweet-footer {
 .fa-flag:hover,
 .fa-retweet:hover,
 .fa-heart:hover {
-    color: #C49A3D;
+    color: #EB8258;
     cursor: pointer;
 }
 
