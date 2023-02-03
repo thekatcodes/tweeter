@@ -46,14 +46,16 @@ $(function () {
 	// Retrieve submitted form content and renders it to the web page
 	const loadTweets = function () {
 		$.getJSON("/tweets/").then((tweetData) => {
-			$(".tweet-container").empty();
+            $(".tweet-container").empty();
 			renderTweets(tweetData);
 		});
 	};
 	$("form").on("submit", function (event) {
 		event.preventDefault();
 		const $textarea = $(this).children("textarea");
-		const $data = $textarea.serialize();
+        const $data = $textarea.serialize();
+        
+        $(".tweet-error").empty();
 
 		// Display error messages
 		if (!$textarea.val().trim()) {
@@ -84,7 +86,8 @@ $(function () {
 		}
 		// On successful submission, reset form input and counter
 		$textarea.val("");
-		const $count = $(this).next(".tweet-btn-counter").children(".counter");
+        const $count = $(this).find(".counter");
+        console.log($count);
 		$count.val(140);
 
 		//POST request to /tweets/ which fires loadTweets function
