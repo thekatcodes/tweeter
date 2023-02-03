@@ -13,19 +13,20 @@ A particular attention was put on the UI of this web page.
 - When the user types within the character limit, an ajax request will be sent to post the new tweet on the top of the tweet stack.
 - When user scrolls past the tweet form, they can click on the arrow below "Write a new tweet" which will bring them back to the form.
 
-
+https://user-images.githubusercontent.com/83685887/216511636-c0fce85f-c6f0-4673-abf8-48c844a063a8.mov
 
 *Error demo*
 - The counter on the bottom right of the form keeps track of how many characters the user can submit.
 - If the user has less than 0 characters left, the counter will turn red to indicate there is an error.
 - If the user tries to submit when there is more than 140 characters or empty field, they will see a corresponding error message.
 
-
+https://user-images.githubusercontent.com/83685887/216511641-1ce7d687-eec6-4ecc-93be-0c644f6f156e.mov
 
 ### Tablet/Mobile
 - Responsive design using media query to switch from desktop to tablet/mobile format.
 - The user profile picture and name become fixed to the top of the page.
 
+https://user-images.githubusercontent.com/83685887/216511651-f286c88c-9eaa-480a-af43-2f3354327724.mov
 
 
 ## Future implementations and improvements
