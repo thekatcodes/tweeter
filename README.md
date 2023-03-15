@@ -53,3 +53,6 @@ https://user-images.githubusercontent.com/83685887/216511651-f286c88c-9eaa-480a-
 - chance
 - md5
 - timeago.js
+
+## Thank You
+Thank you for taking the time to look at one of my projects!
